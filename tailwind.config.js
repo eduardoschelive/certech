@@ -8,6 +8,7 @@ export default {
         purple: 'var(--color-purple)',
         'purple-dark': 'var(--color-purple-dark)',
         'purple-light': 'var(--color-purple-light)',
+        gray: 'var(--color-gray)',
       },
       backgroundColor: {
         primary: 'var(--color-bg-primary)',

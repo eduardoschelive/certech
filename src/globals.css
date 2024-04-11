@@ -18,15 +18,16 @@ html {
 }
 
 :root {
-  --color-bg-secondary: #F3E3F7;
   --color-purple: #6F2C87;
   --color-purple-dark: #4D1960;
   --color-purple-light: #8E4FA5;
+  --color-gray: #989090;
 }
 
 /*
   Light Theme
 */
 [data-theme='light'] {
-  --color-bg-secondary-primary: #fff;
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #F3E3F7;
 }

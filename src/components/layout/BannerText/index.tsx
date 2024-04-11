@@ -3,7 +3,7 @@ import { MainText } from '../MainText'
 
 export const BannerText = () => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-1">
       <MainText />
       <Typography as="h1" className="text-purple-light text-2xl font-bold">
         Arquivos de certificados digitais

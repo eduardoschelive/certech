@@ -5,7 +5,7 @@ export const MainText = () => {
     <div>
       <Typography
         as="p"
-        className="bg-gradient-to-t from-purple to-purple-dark inline-block text-transparent bg-clip-text text-6xl font-bold"
+        className="bg-gradient-to-b from-purple to-purple-dark inline-block text-transparent bg-clip-text text-6xl font-bold"
       >
         Conversor Certech
       </Typography>
