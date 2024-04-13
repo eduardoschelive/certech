@@ -1,24 +1,58 @@
-import { Accept, useDropzone } from 'react-dropzone'
+import { useFileContext } from '@/contexts/FileContext/useFileContext'
+import {
+  getAcceptedCertififacteFiles,
+  isCrtAndKey,
+  isCrtOrKey,
+  isPfx,
+} from '@/utils/certificate-utils'
+import { getAcceptedExtensions, getErrorCodes } from '@/utils/file-utils'
+import { FileRejection, useDropzone } from 'react-dropzone'
 import { toast } from 'react-toastify'
 import { DropZoneRoot } from '../DropZoneRoot'
 import { FileDropZoneContent } from '../FileDropZoneContent'
 import { FileDropZoneWrapper } from '../FileDropZoneWrapper'
 
-const acceptObject: Accept = {
-  'application/x-pkcs12': ['.pfx'],
-  'application/x-x509-ca-cert': ['.crt'],
-  'application/octet-stream': ['.key'],
-}
-
 export const FileDropZone = () => {
-  const onDropRejected = () => {
-    toast.error('Os únicos formatos aceitos são .pfx, .crt e .key')
+  const { files, status, setFiles } = useFileContext()
+  const acceptedFiles = getAcceptedCertififacteFiles(files)
+  const maxFiles = files.length === 0 ? 2 : 1
+
+  const onDropRejected = (rejectFiles: FileRejection[]) => {
+    const errorCodes = getErrorCodes(rejectFiles)
+
+    const isTooManyFiles = errorCodes.includes('too-many-files')
+    if (isTooManyFiles) {
+      toast.error('Você pode enviar apenas 2 arquivos')
+    }
+
+    const isInvalidType = errorCodes.includes('file-invalid-type')
+    if (isInvalidType) {
+      toast.error(
+        'Os únicos formatos aceitos são ' +
+          getAcceptedExtensions(acceptedFiles).join(', '),
+      )
+    }
+  }
+
+  const onDropAccepted = async (acceptedFiles: File[]) => {
+    const isPfxFile = acceptedFiles.length === 1 && isPfx(acceptedFiles[0])
+    const isCrtOrKeyFile =
+      acceptedFiles.length === 1 && isCrtOrKey(acceptedFiles[0])
+    const isCrtAndKeyFiles = isCrtAndKey(acceptedFiles)
+
+    if (isPfxFile || isCrtOrKeyFile || isCrtAndKeyFiles) {
+      setFiles([...files, ...acceptedFiles])
+      return
+    }
   }
 
   const { getRootProps, getInputProps } = useDropzone({
-    accept: acceptObject,
+    accept: acceptedFiles,
     onDropRejected,
-    maxFiles: 2,
+    onDropAccepted,
+    maxFiles: maxFiles,
+    noDragEventsBubbling: true,
+    disabled: status === 'canConvert',
   })
 
   return (

@@ -1,16 +1,14 @@
-import { BackgroundBanner } from '@/components/layout/BackgroundBanner'
+import { RouterProvider } from 'react-router-dom'
 import { Flip, ToastContainer } from 'react-toastify'
-import { FileDropZone } from './components/layout/FileDropZone'
-import { TutorialCircles } from './components/layout/TutorialCircles'
+import { FileContextWrapper } from './contexts/FileContext/FileContextWrapper'
+import { router } from './router'
 
 function App() {
   return (
     <>
-      <div className="absolute inset-0">
-        <BackgroundBanner />
-        <TutorialCircles />
-        <FileDropZone />
-      </div>
+      <FileContextWrapper>
+        <RouterProvider router={router} />
+      </FileContextWrapper>
       <ToastContainer
         transition={Flip}
         position="bottom-right"
