@@ -4,7 +4,9 @@ export const convertPfxToCrtAndKey = async (
   buffer: string,
   password: string = '',
 ) => {
-  const p12Asn1 = forge.asn1.fromDer(buffer)
+  const decodedBuffer = forge.util.decode64(buffer)
+
+  const p12Asn1 = forge.asn1.fromDer(decodedBuffer, false)
 
   const p12Parsed = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, password)
 
