@@ -2,16 +2,15 @@ import { CircleText } from '../CircleText'
 
 export const TutorialCircles = () => {
   return (
-    <div className="flex flex-row w-full justify-around items-center mt-4">
+    <div className="flex flex-row w-full justify-around items-center mt-6">
       <CircleText circleInnerText="1">
-        Selecione o tipo de arquivo que deseja converter
+        Solte ou selecione o seu arquivo para converter
       </CircleText>
       <CircleText circleInnerText="2">
-        Arraste ou selecione o arquivo que deseja dentro da linha pontilhada e
-        colocar a senha
+        Insira a sua senha caso seja necessário
       </CircleText>
       <CircleText circleInnerText="3">
-        Seu arquivo ja estará convertido para você realizar o utilizar
+        Basta clicar em converter e pronto!
       </CircleText>
     </div>
   )
