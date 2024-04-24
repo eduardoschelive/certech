@@ -1,19 +1,21 @@
-import { Circle } from "@/components/ui/Circle"
-import { Typography } from "@/components/ui/Typography"
-import { PropsWithChildren } from "react"
+import { Circle } from '@/components/ui/Circle'
+import { Typography } from '@/components/ui/Typography'
+import { PropsWithChildren } from 'react'
 
 type CircleTextProps = {
-    circleInnerText?: string
+  circleInnerText?: string
 }
 
-
-export const CircleText = ({ children, circleInnerText }: PropsWithChildren<CircleTextProps>) => {
-    return (
-        <div className="flex flex-row gap-3 justify-center items-center">
-            <Circle className="bg-purple-light" innerText={circleInnerText}/>
-            <Typography as="h1" className="max-w-48 text-gray">
-                {children}
-            </Typography>
-        </div>
-    )
+export const CircleText = ({
+  children,
+  circleInnerText,
+}: PropsWithChildren<CircleTextProps>) => {
+  return (
+    <div className="flex flex-row gap-3 justify-center items-center">
+      <Circle className="bg-purple-light" innerText={circleInnerText} />
+      <Typography as="h1" className="max-w-60 text-gray">
+        {children}
+      </Typography>
+    </div>
+  )
 }
