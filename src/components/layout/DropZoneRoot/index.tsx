@@ -5,7 +5,7 @@ type DropZoneRootProps = PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
 export const DropZoneRoot = ({ children, ...props }: DropZoneRootProps) => {
   return (
     <div
-      className="w-full h-full flex items-center justify-center border-2 rounded-sm border-purple-light border-dashed border- cursor-pointer"
+      className="w-full h-full flex flex-col items-center justify-center border-2 rounded-sm border-purple-light border-dashed cursor-pointer p-6 my-6"
       {...props}
     >
       {children}

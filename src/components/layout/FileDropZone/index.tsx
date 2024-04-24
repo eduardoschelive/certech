@@ -7,9 +7,10 @@ import {
 } from '@/utils/certificate-utils'
 import { getAcceptedExtensions, getErrorCodes } from '@/utils/file-utils'
 import { FileRejection, useDropzone } from 'react-dropzone'
+import { IoCloudUploadOutline } from 'react-icons/io5'
 import { toast } from 'react-toastify'
 import { DropZoneRoot } from '../DropZoneRoot'
-import { FileDropZoneContent } from '../FileDropZoneContent'
+import { FiledropzoneTitle } from '../FileDropZoneTitle'
 import { FileDropZoneWrapper } from '../FileDropZoneWrapper'
 
 export const FileDropZone = () => {
@@ -59,7 +60,8 @@ export const FileDropZone = () => {
     <FileDropZoneWrapper>
       <DropZoneRoot {...getRootProps()}>
         <input {...getInputProps()} />
-        <FileDropZoneContent />
+        <IoCloudUploadOutline size={58} className="text-purple-light" />
+        <FiledropzoneTitle />
       </DropZoneRoot>
     </FileDropZoneWrapper>
   )

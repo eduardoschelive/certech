@@ -2,7 +2,7 @@ import { CircleText } from '../CircleText'
 
 export const TutorialCircles = () => {
   return (
-    <div className="flex flex-row w-full justify-around items-center">
+    <div className="flex flex-row w-full justify-around items-center mt-4">
       <CircleText circleInnerText="1">
         Selecione o tipo de arquivo que deseja converter
       </CircleText>
