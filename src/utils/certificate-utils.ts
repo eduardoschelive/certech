@@ -27,7 +27,8 @@ export const isCrt = (file: File) => file.name.endsWith('.crt')
 export const isKey = (file: File) => file.name.endsWith('.key')
 
 export const isCrtAndKey = (files: File[]) => {
-  const [crt, key] = files
+  const crt = files.find((file) => isCrt(file))
+  const key = files.find((file) => isKey(file))
 
   if (!crt || !key) {
     return false
