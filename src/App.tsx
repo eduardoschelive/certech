@@ -1,13 +1,12 @@
-import { RouterProvider } from 'react-router-dom'
 import { Flip, ToastContainer } from 'react-toastify'
 import { FileContextWrapper } from './contexts/FileContext/FileContextWrapper'
-import { router } from './router'
+import { Home } from './routes/Home'
 
 function App() {
   return (
     <>
       <FileContextWrapper>
-        <RouterProvider router={router} />
+        <Home />
       </FileContextWrapper>
       <ToastContainer
         transition={Flip}

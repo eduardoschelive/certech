@@ -2,7 +2,7 @@ export const WaveLayer = () => {
   return (
     <svg
       width="100%"
-      viewBox="0 0 1920 193"
+      viewBox="0 0 1920 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

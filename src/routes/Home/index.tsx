@@ -11,19 +11,10 @@ export const Home = () => {
 
   return (
     <>
-      <BackgroundBanner />\
-      <div
-        className={
-          shouldShowTutorial
-            ? 'absolute top-96 w-full'
-            : 'absolute top-[340px] w-full'
-        }
-      >
-        {shouldShowTutorial ? <TutorialCircles /> : <FileDropZone />}
-      </div>
-      <div className="absolute bottom-0 w-full h-52">
-        {shouldShowTutorial ? <FileDropZone /> : <ConversionButton />}
-      </div>
+      <BackgroundBanner />
+      {shouldShowTutorial ? <TutorialCircles /> : null}
+      <FileDropZone />
+      {!shouldShowTutorial ? <ConversionButton /> : null}
     </>
   )
 }
