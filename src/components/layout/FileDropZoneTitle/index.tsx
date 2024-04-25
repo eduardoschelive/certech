@@ -35,9 +35,7 @@ export const FiledropzoneTitle = () => {
 
   return (
     <div className="flex flex-col items-center justify-center my-2">
-      <p className="text-center text-gray text-2xl">
-        {getTextByStatus(status)}
-      </p>
+      <p className="text-center text-gray text-xl">{getTextByStatus(status)}</p>
     </div>
   )
 }
