@@ -66,7 +66,7 @@ export const ConversionButton = () => {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <button
-        className="bottom-8 bg-[#F3E3F7] -bold text-lg text-purple-dark rounded-sm px-20 py-4"
+        className="bottom-8 bg-secondary -bold text-lg text-purple-dark rounded-sm px-20 py-4"
         onClick={onClick}
       >
         Converter

@@ -1,10 +1,11 @@
+import { ThemeProvider } from 'next-themes'
 import { Flip, ToastContainer } from 'react-toastify'
 import { ConversionContextWrapper } from './contexts/FileContext/ConversionContextWrapper'
 import { Home } from './routes/Home'
 
 function App() {
   return (
-    <>
+    <ThemeProvider enableSystem enableColorScheme={false}>
       <ConversionContextWrapper>
         <Home />
       </ConversionContextWrapper>
@@ -21,7 +22,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-    </>
+    </ThemeProvider>
   )
 }
 

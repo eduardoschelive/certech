@@ -6,9 +6,14 @@
   reset
 */
 
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('./assets/LexendDeca.ttf') format('truetype');
+}
+
 html {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lexend Deca', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,7 +26,8 @@ html {
   --color-purple: #6F2C87;
   --color-purple-dark: #4D1960;
   --color-purple-light: #8E4FA5;
-  --color-gray: #989090;
+
+  --color-bg-secondary: #F3E3F7;
 }
 
 /*
@@ -29,7 +35,15 @@ html {
 */
 [data-theme='light'] {
   --color-bg-primary: #fff;
-  --color-bg-secondary: #F3E3F7;
+  --color-text: #989090;
+}
+
+/*
+  Dark Theme
+*/
+[data-theme='dark'] {
+  --color-text: white;
+  --color-bg-primary: #323644;
 }
 
 
@@ -40,5 +54,9 @@ html {
 .float-label-input:focus-within label,
 .float-label-input input:not(:placeholder-shown)+label {
   transform: translateY(-1.5rem) scale(0.75);
-  background-color: white;
+  background-color: var(--color-bg-primary);
+}
+
+body {
+  background-color: var(--color-bg-primary);
 }

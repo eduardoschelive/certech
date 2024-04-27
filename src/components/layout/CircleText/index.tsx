@@ -13,7 +13,7 @@ export const CircleText = ({
   return (
     <div className="flex flex-row gap-3 justify-center items-center">
       <Circle className="bg-purple-light" innerText={circleInnerText} />
-      <Typography as="h1" className="max-w-60 text-gray">
+      <Typography as="h1" className="max-w-60 text-mainText">
         {children}
       </Typography>
     </div>
