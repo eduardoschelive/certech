@@ -1,13 +1,13 @@
 import { Flip, ToastContainer } from 'react-toastify'
-import { FileContextWrapper } from './contexts/FileContext/FileContextWrapper'
+import { ConversionContextWrapper } from './contexts/FileContext/ConversionContextWrapper'
 import { Home } from './routes/Home'
 
 function App() {
   return (
     <>
-      <FileContextWrapper>
+      <ConversionContextWrapper>
         <Home />
-      </FileContextWrapper>
+      </ConversionContextWrapper>
       <ToastContainer
         transition={Flip}
         position="bottom-right"

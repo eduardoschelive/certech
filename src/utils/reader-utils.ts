@@ -18,7 +18,7 @@ export const readFromFile = (file: File): Promise<string> => {
       const pfxContent = new Uint8Array(result)
       const pfxContentString = String.fromCharCode.apply(
         null,
-        pfxContent as unknown as number[], // Uma little gambs aqui porque o node é burro igual uma porta
+        pfxContent as unknown as number[], // Uma little gambs aqui porque o typescript é burro igual uma porta
       )
       resolve(pfxContentString)
     }

@@ -1,5 +1,5 @@
 import { LabeledIcon } from '@/components/ui/LabeledIcon'
-import { useFileContext } from '@/contexts/FileContext/useFileContext'
+import { useConversion } from '@/contexts/FileContext/useConversion'
 import { MouseEvent } from 'react'
 import {
   IoCloseCircle,
@@ -8,7 +8,7 @@ import {
 } from 'react-icons/io5'
 
 export const FileDropZoneIcon = () => {
-  const { files, status, setFiles } = useFileContext()
+  const { files, status, setFiles } = useConversion()
 
   if (status === 'empty') {
     return (

@@ -1,4 +1,4 @@
-import { useFileContext } from '@/contexts/FileContext/useFileContext'
+import { useConversion } from '@/contexts/FileContext/useConversion'
 import {
   getAcceptedCertififacteFiles,
   isCrtAndKey,
@@ -14,7 +14,7 @@ import { FiledropzoneTitle } from '../FileDropZoneTitle'
 import { FileDropZoneWrapper } from '../FileDropZoneWrapper'
 
 export const FileDropZone = () => {
-  const { files, status, setFiles } = useFileContext()
+  const { files, status, setFiles } = useConversion()
   const acceptedFiles = getAcceptedCertififacteFiles(files)
   const maxFiles = files.length === 0 ? 2 : 1
 

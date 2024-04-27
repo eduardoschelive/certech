@@ -2,7 +2,7 @@ import forge from 'node-forge'
 
 export const convertPfxToCrtAndKey = async (
   buffer: string,
-  password: string = '',
+  password: string,
 ) => {
   const decodedBuffer = forge.util.decode64(buffer)
 
@@ -41,7 +41,7 @@ export const convertPfxToCrtAndKey = async (
 export const convertCrtAndKeyToPfx = async (
   crtBuffer: string,
   keyBuffer: string,
-  password: string = '',
+  password: string,
 ) => {
   const certAsn1 = forge.pki.certificateFromPem(crtBuffer)
   const keyAsn1 = forge.pki.decryptRsaPrivateKey(keyBuffer, password)
@@ -49,7 +49,6 @@ export const convertCrtAndKeyToPfx = async (
   const p12 = forge.pkcs12.toPkcs12Asn1(keyAsn1, certAsn1, password)
 
   const p12Der = forge.asn1.toDer(p12).getBytes()
-  const p12b64 = forge.util.encode64(p12Der)
 
-  return p12b64
+  return Buffer.from(p12Der, 'binary')
 }

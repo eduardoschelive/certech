@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import electron from 'vite-plugin-electron/simple'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
@@ -23,5 +24,6 @@ export default defineConfig({
       // See 👉 https://github.com/electron-vite/vite-plugin-electron-renderer
       renderer: {},
     }),
+    nodePolyfills(), // Gambiarra TecnoArtTM
   ],
 })

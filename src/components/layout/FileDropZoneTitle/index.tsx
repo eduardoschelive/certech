@@ -1,8 +1,8 @@
-import { useFileContext } from '@/contexts/FileContext/useFileContext'
+import { useConversion } from '@/contexts/FileContext/useConversion'
 import { isCrt } from '@/utils/certificate-utils'
 
 export const FiledropzoneTitle = () => {
-  const { files, status } = useFileContext()
+  const { files, status } = useConversion()
 
   const getTextByStatus = (status: string) => {
     if (status === 'empty') {
@@ -17,7 +17,7 @@ export const FiledropzoneTitle = () => {
     if (status === 'canConvert') {
       return (
         <>
-          Tudo pronto, basta clicar em{' '}
+          Tudo pronto, basta inserir a senha e clicar em{' '}
           <span className="text-purple-light">converter</span>
         </>
       )

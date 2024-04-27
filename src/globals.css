@@ -31,3 +31,14 @@ html {
   --color-bg-primary: #fff;
   --color-bg-secondary: #F3E3F7;
 }
+
+
+.float-label-input {
+  margin: 32px 0;
+}
+
+.float-label-input:focus-within label,
+.float-label-input input:not(:placeholder-shown)+label {
+  transform: translateY(-1.5rem) scale(0.75);
+  background-color: white;
+}
