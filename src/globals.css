@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Lexend Deca';
-  src: url('./assets/LexendDeca.ttf') format('truetype');
+  src: url('/LexendDeca.ttf') format('truetype');
 }
 
 html {

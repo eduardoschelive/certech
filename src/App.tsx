@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'next-themes'
 import { Flip, ToastContainer } from 'react-toastify'
 import { ConversionContextWrapper } from './contexts/FileContext/ConversionContextWrapper'
-import { Home } from './routes/Home'
+import { Home } from './screens/Home'
 
 function App() {
   return (

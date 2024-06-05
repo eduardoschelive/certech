@@ -23,7 +23,6 @@ function createWindow() {
   const factor = screen.getPrimaryDisplay().scaleFactor
 
   win = new BrowserWindow({
-    icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       zoomFactor: 1.0 / factor,
@@ -33,7 +32,7 @@ function createWindow() {
     resizable: false,
   })
 
-  win.removeMenu()
+  //win.removeMenu()
 
   // Test active push message to Renderer-process.
   win.webContents.on('did-finish-load', () => {

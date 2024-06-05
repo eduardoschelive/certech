@@ -1,4 +1,4 @@
-import cloudImage from '@/assets/cloud.png'
+import cloudImage from '/cloud.png'
 import { Image } from '@/components/ui/Image'
 
 type CloudProps = {

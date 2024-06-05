@@ -2,9 +2,12 @@
   "name": "certech",
   "private": true,
   "version": "0.0.0",
+  "description": "Conversor de certificados PFX e CRT",
+  "authors": ["Eduardo Guiraldelli Schelive", "Julia Santos Pinheiro", "João Vitor Miguel", "Bruno Mecca"],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
+    "pack": "electron-builder --dir",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -31,7 +34,7 @@
     "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "^10.4.18",
     "electron": "^26.1.0",
-    "electron-builder": "^24.6.4",
+    "electron-builder": "^24.13.3",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -46,5 +49,24 @@
     "vite-plugin-electron-renderer": "^0.14.5",
     "vite-plugin-node-polyfills": "^0.21.0"
   },
-  "main": "dist-electron/main.js"
+  "main": "dist-electron/main.js",
+  "build": {
+    "appId": "com.certech.app",
+    "productName": "Certech",
+    "directories": {
+      "output": "dist",
+      "buildResources": "public"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Utility",
+      "executableName": "certech",
+      "icon": "public/icon.png"
+    },
+    "win": {
+      "target": ["nsis", "msi"],
+      "icon": "public/icon.png",
+      "executableName": "certech"
+    }
+  }
 }
