@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import 'react-toastify/dist/ReactToastify.css'
-import App from './App.tsx'
+import App from './App'
 import './globals.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -12,8 +12,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 // Remove Preload scripts loading
 postMessage({ payload: 'removeLoading' }, '*')
-
-// Use contextBridge
-window.ipcRenderer.on('main-process-message', (_event, message) => {
-  console.log(message)
-})

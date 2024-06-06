@@ -20,14 +20,14 @@ Entre no diretório do projeto
 Instale as dependências
 
 ```bash
-  npm i --global pnpm
-  pnpm install
+  npm i --global yarn
+  yarn install
 ```
 
 Inicie a aplicação localmente
 
 ```bash
-  pnpm dev
+  yarn dev
 ```
 
 
