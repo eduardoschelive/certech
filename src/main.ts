@@ -16,7 +16,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
-    icon: './icon.png',
+    icon: path.join(__dirname, '../public/icon.png'),
   });
 
   mainWindow.removeMenu();

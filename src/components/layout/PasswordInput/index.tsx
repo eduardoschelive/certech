@@ -20,7 +20,7 @@ export const PasswordInput = () => {
           placeholder=" "
           value={password}
           onChange={handleChange}
-          className="w-full bg-primary focus:outline-none focus:shadow-outline border py-3 px-3 block appearance-none leading-normal border-purple focus:border-purple-light"
+          className="w-full bg-primary focus:outline-none focus:shadow-outline border py-3 px-3 block appearance-none leading-normal border-purple focus:border-purple-light text-mainText"
         />
         <label
           htmlFor="password"

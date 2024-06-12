@@ -1,4 +1,5 @@
 import forge from 'node-forge'
+import { Buffer } from "buffer"
 
 export const convertPfxToCrtAndKey = async (
   buffer: string,
