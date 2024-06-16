@@ -19,12 +19,14 @@ const createWindow = () => {
     icon: path.join(__dirname, '../public/icon.png'),
   });
 
-  mainWindow.removeMenu();
+  //mainWindow.removeMenu();
 
   // and load the index.html of the app.
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
+    console.log('Loading Vite dev server URL:', MAIN_WINDOW_VITE_DEV_SERVER_URL);
     mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
   } else {
+    console.log('Loading renderer build:', path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
     mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
   }
 

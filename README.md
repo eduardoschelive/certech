@@ -30,6 +30,13 @@ Inicie a aplicação localmente
   yarn dev
 ```
 
+Compilar para distribuição
+
+```bash
+  yarn package
+  yarn make
+```
+
 
 
 

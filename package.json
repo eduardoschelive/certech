@@ -1,13 +1,13 @@
 {
-  "name": "certech-teste",
-  "productName": "certech-teste",
+  "name": "certech",
+  "productName": "certech",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make --targets @electron-forge/maker-rpm",
+    "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },

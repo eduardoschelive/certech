@@ -9,24 +9,33 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
-    icon: './icon',
+    icon: './public/icon',
   },
   rebuildConfig: {},
   makers: [
-  new MakerSquirrel(), 
+  new MakerSquirrel({
+    authors: 'Eduardo Schelive',
+    description: 'Certech',
+    setupMsi: 'Certech.msi',
+    title: 'Certech',
+    iconUrl: './public/icon.png',
+    setupIcon: './public/icon.png',
+    
+  }), 
   new MakerFlatpak({
     options: {
       files: [],
       categories: ['Utility'],
       productName: 'Certech',
       base: 'com.eduardoschelive',
+      icon: './public/icon.png',
     }
   }),
   new MakerRpm({
     options: {
       productName: 'Certech',
       categories: ['Utility'],
-      icon: './icon.png',
+      icon: './public/icon.png',
       description: 'Certech',
     }
 
