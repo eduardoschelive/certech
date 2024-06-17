@@ -1,3 +1,4 @@
+![Icon](public/icon.png)
 # Certech
 
 Certech é um conversor de certificados para Desktop que visa facilitar o processo de transformar arquivos PFX em um par de CRT + KEY e vice versa, sendo uma ferramenta facilitadora quando se faz necessário o uso de certificados digitais em diferentes formatos.
