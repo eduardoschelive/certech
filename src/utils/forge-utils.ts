@@ -1,6 +1,14 @@
 import forge from 'node-forge'
 import { Buffer } from "buffer"
 
+
+/**
+ * Converte um buffer PFX em um certificado e chave privada.
+ * @param buffer - O buffer do PFX.
+ * @param password - A senha do PFX.
+ * @returns Um objeto contendo o certificado e a chave privada.
+ * @throws Se ocorrer um erro ao converter o PFX.
+ */
 export const convertPfxToCrtAndKey = async (
   buffer: string,
   password: string,

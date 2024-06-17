@@ -17,7 +17,6 @@ export const Home = () => {
       <BackgroundBanner />
       {shouldShowTutorial ? <TutorialCircles /> : null}
       <FileDropZone />
-
       {!shouldShowTutorial ? (
         <>
           <PasswordInput />

@@ -4,6 +4,12 @@ export type ReaderFunctions = {
   [key in ReadMethod]: () => void
 }
 
+/**
+ * Lê o conteúdo de um arquivo e o retorna como uma string.
+ * @param file - O arquivo a ser lido.
+ * @returns Uma promise que resolve com o conteúdo do arquivo.
+ * @throws Se ocorrer um erro ao ler o arquivo.
+ */
 export const readFromFile = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
