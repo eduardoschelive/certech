@@ -17,10 +17,11 @@ const config: ForgeConfig = {
     authors: 'Eduardo Schelive',
     description: 'Certech',
     setupMsi: 'Certech.msi',
+    setupExe: 'Certech.exe',
     title: 'Certech',
-    iconUrl: './public/icon.png',
-    setupIcon: './public/icon.png',
-    
+    setupIcon: './public/icon.ico',
+    noMsi: false,
+    iconUrl: 'https://imgur.com/BZ0dlpE'
   }), 
   new MakerFlatpak({
     options: {
