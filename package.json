@@ -2,7 +2,7 @@
   "name": "certech",
   "productName": "certech",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Certech",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -42,10 +42,7 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "keywords": [],
-  "author": {
-    "name": "Eduardo Schelive",
-    "email": "eduardoschelive@gmail.com"
-  },
+  "author": "Eduardo Schelive",
   "license": "MIT",
   "dependencies": {
     "buffer": "^6.0.3",
