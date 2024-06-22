@@ -1,7 +1,7 @@
 import { useConversion } from '@/contexts/FileContext/useConversion'
 import { isCrtAndKey } from '@/utils/certificate-utils'
 import { delay } from '@/utils/delay'
-import { createAndDownloadBlob } from '@/utils/file-utils'
+import { writeFileOnCertificatePath } from '@/utils/file-utils'
 import {
   convertCrtAndKeyToPfx,
   convertPfxToCrtAndKey,
@@ -38,7 +38,7 @@ export const ConversionButton = () => {
 
     const fileName = crtFile.name.split('.')[0]
 
-    createAndDownloadBlob(result, 'application/x-pkcs12', `${fileName}.pfx`)
+    writeFileOnCertificatePath(result, 'pfx', fileName)
   }
 
   const handlePfxFile = async () => {
@@ -48,16 +48,8 @@ export const ConversionButton = () => {
 
     const fileName = files[0].name.split('.')[0]
 
-    createAndDownloadBlob(
-      result.crt,
-      'application/x-x509-ca-cert',
-      `${fileName}.crt`,
-    )
-    createAndDownloadBlob(
-      result.keyOfCrt,
-      'application/octet-stream',
-      `${fileName}.key`,
-    )
+    writeFileOnCertificatePath(result.crt, 'crt', fileName)
+    writeFileOnCertificatePath(result.keyOfCrt, 'key', fileName)
   }
 
   const onClick = async () => {

@@ -25,19 +25,16 @@ export const getErrorCodes = (rejectFiles: FileRejection[]) => {
 /**
  * Cria e faz o download de um blob.
  *
- * @param data - Os dados do blob.
- * @param fileType - O tipo do arquivo.
+ * @param data - O buffer de dados.
+ * @param extension - a extensão do arquivo.
  * @param fileName - O nome do arquivo.
  */
-export const createAndDownloadBlob = (
-  data: BlobPart,
-  fileType: string,
+export const writeFileOnCertificatePath = (
+  data: Buffer | string,
+  extension: string,
   fileName: string,
 ) => {
-  const blob = new Blob([data], { type: fileType })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = fileName
-  a.click()
+  const file = `${fileName}.${extension}`
+  // @ts-ignore
+  window.fileAPI.writeFile(file, data)
 }
