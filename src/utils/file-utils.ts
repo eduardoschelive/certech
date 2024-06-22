@@ -1,4 +1,5 @@
 import { Accept, FileRejection } from 'react-dropzone'
+import { getCertificateDirectory } from './folder'
 
 /**
  * Retorna um array com as extensões dos arquivos aceitos baseado no objeto accept.
@@ -34,7 +35,7 @@ export const writeFileOnCertificatePath = (
   extension: string,
   fileName: string,
 ) => {
-  const file = `${fileName}.${extension}`
+  const file = `${getCertificateDirectory()}/${fileName}.${extension}`
   // @ts-ignore
   window.fileAPI.writeFile(file, data)
 }
